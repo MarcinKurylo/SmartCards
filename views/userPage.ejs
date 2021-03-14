@@ -1,0 +1,28 @@
+<%- include("./partials/head.ejs") %> 
+<body>
+    <main id="user-main">
+        <%- include("./partials/navbar.ejs") %>
+        <%- include("./partials/flashMessage.ejs") %>
+        <section>
+            <span>Your flashcards</span>
+            <% for( let flashcard of flashcards) { %>
+                <div class="flashcard">
+                    <span class="language"><%= flashcard.language1text %></span>
+                    <a href="/user/flashcard/<%= flashcard.id %>">
+                        <img src="<%= flashcard.image.url %>" alt="" >
+                    </a>
+                    <span class="language"><%= flashcard.language2text %></span>
+                </div>
+            <% } %>
+            <div class="flashcard">
+                <span class="language">Add a flashcard</span>
+                <a href="/user/flashcard/add">
+                    <img src="/img/plus.jpg" alt="" >
+                </a>
+                <span class="language">Ajoutez un flashcard</span>
+            </div>
+        </section>
+    </main>
+</body>
+<%- include("./partials/foot.ejs") %> 
+</html>

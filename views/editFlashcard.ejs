@@ -1,0 +1,26 @@
+<%- include("./partials/head.ejs") %> 
+<body>
+    <main id="add-flashcard-main">
+        <%- include("./partials/navbar.ejs") %>
+        <%- include("./partials/flashMessage.ejs") %>
+        <section>
+            <span>Edit your Flashcard</span>
+            <form action="/user/flashcard/<%= flashcard.id %>/edit?_method=PUT" method="post" enctype="multipart/form-data" id="#add-form">
+                <div class="input-grp">
+                    <label for="language1">Text in first language</label>
+                    <input type="text" name="language1" id="language1" value="<%= flashcard.language1text %>" required>    
+                </div>
+                <div class="input-grp">
+                    <input type="file" class="custom-file-input" name="image" id="image" onchange="readSingleFile(this.files)">
+                </div>
+                <div class="input-grp">
+                    <label for="language2">Text in second language</label>
+                    <input type="text" name="language2" id="language2" value="<%= flashcard.language2text %>" required>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+            </form>
+        </section>
+    </main>
+</body>
+<%- include("./partials/foot.ejs") %> 
+</html>

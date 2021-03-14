@@ -1,0 +1,40 @@
+<nav class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+        <div>
+            <div>
+                <ul class="navigation">
+                    <% if (currentUser) { %>
+                        <li class="nav-item">
+                            <a href="/user/logout" class="nav-link">
+                                <span class="nav-txt">Logout</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user" class="nav-link">
+                                <span class="nav-txt">Display Flashcards</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user/flashcard/add" class="nav-link">
+                                <span class="nav-txt">Add Flashcard</span>
+                            </a>
+                        </li>
+                        <% } else { %>
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">
+                                    <span class="nav-txt">Sign in</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/register" class="nav-link">
+                                    <span class="nav-txt">Sign up</span>
+                                </a>
+                            </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

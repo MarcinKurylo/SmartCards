@@ -1,0 +1,475 @@
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.menu-wrap .toggler:checked + .hamburger > div::after, .menu-wrap .toggler:checked + .hamburger > div::before {
+  top: 0;
+  width: 100%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  -webkit-transition: opacity 0.5 ease;
+  transition: opacity 0.5 ease;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 80%;
+  height: 2px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.menu-wrap .hamburger > div:before, .menu-wrap .hamburger > div:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 80%;
+  height: 2px;
+  background-color: inherit;
+}
+
+.menu-wrap .hamburger > div:after {
+  top: 10px;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background-color: #353535;
+  opacity: 0.9;
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.menu-wrap .menu > div > div .nav-item {
+  list-style: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div .nav-item .nav-link {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+main {
+  width: 100vw;
+  height: 100%;
+  background-image: url("../img/welcomeBackground.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+main section {
+  background-color: #353535;
+  width: 100vmin;
+  height: 80%;
+  opacity: 0.9;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 5px;
+}
+
+main section > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 10px;
+}
+
+#welcome-page-main {
+  font-size: 2rem;
+}
+
+#welcome-page-main .span {
+  margin: 0;
+}
+
+#add-flashcard-main section, #flashcard-main section {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#add-flashcard-main section #add-form, #flashcard-main section #add-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 1rem;
+  border: 1px solid white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 10px;
+}
+
+#add-flashcard-main section #add-form .input-grp, #flashcard-main section #add-form .input-grp {
+  font-size: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#user-main section {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+}
+
+#user-main section ::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  #user-main section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+#user-main section > span {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+#login-register-form {
+  font-size: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #353535;
+  color: #ffffff;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #353535;
+  border-radius: 1rem;
+}
+
+#login-register-form input {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  border-radius: 1rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  width: 70%;
+}
+
+#login-register-form button {
+  border: none;
+  background-color: #ffffff;
+  color: #353535;
+  border-radius: 0.5rem;
+}
+
+.flash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 1rem;
+  font-size: 0.8rem;
+  text-shadow: none;
+  opacity: 0.6;
+  position: absolute;
+  top: 1rem;
+  padding: 0 5px;
+}
+
+.flash-success {
+  background-color: lightgreen;
+  border: 1px solid green;
+  color: green;
+}
+
+.flash-error {
+  background-color: lightpink;
+  border: 1px solid red;
+  color: red;
+}
+
+.flash-close {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: auto;
+  margin-left: auto;
+  font-size: 0.3rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+.flashcard {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 2rem;
+  width: 5rem;
+  height: 5rem;
+  font-size: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #353535;
+  text-shadow: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flashcard a {
+  border: 1px solid #353535;
+  width: 90%;
+  height: 60%;
+}
+
+.flashcard a img {
+  width: 100%;
+  height: 100%;
+}
+
+.flashcard-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+}
+
+.flashcard-menu .flashcard-link {
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+}
+
+.flashcard-menu .delete-form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+}
+
+.flashcard-menu .delete-form button {
+  font-size: inherit;
+  background-color: transparent;
+  color: inherit;
+  border: none;
+}
+/*# sourceMappingURL=style.css.map */

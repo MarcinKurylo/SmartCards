@@ -1,0 +1,25 @@
+<%- include("./partials/head.ejs") %> 
+<body>
+    <main id="flashcard-main">
+        <%- include("./partials/navbar.ejs") %>
+        <%- include("./partials/flashMessage.ejs") %>
+        <section>
+            <div class="flashcard">
+                <span class="language"><%= flashcard.language1text %></span>
+                <a href="#">
+                    <img src="<%= flashcard.image.url %>" alt="" >
+                </a>
+                <span class="language"><%= flashcard.language2text %></span>
+            </div>
+            <div class="flashcard-menu">
+                <a href="/user" class="flashcard-link">Back</a>
+                <a href="/user/flashcard/<%= flashcard._id %>/edit" class="flashcard-link">Update</a>
+                <form action="/user/flashcard/<%= flashcard._id %>?_method=DELETE" method="post" class="delete-form">
+                <button type="submit">Delete</button>
+            </form>
+            </div>
+        </section>
+    </main>
+</body>
+<%- include("./partials/foot.ejs") %> 
+</html>

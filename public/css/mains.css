@@ -1,0 +1,12 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#welcome-page-main {
+  background-image: url("../img/welcomeBackground.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=mains.css.map */

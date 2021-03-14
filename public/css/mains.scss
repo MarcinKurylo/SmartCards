@@ -1,0 +1,79 @@
+main{
+    width: 100vw;
+    height: 100%;
+    background-image: url('../img/welcomeBackground.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: $textSecondary;
+    text-shadow: 1px 1px 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    section{
+        background-color: $backgroundSecondary;
+        width: 100vmin;
+        height: 80%;
+        opacity: 0.9;
+        border-radius: 1rem;
+        display: flex;
+        position: relative;
+        padding: 5px;
+        >span{
+            display: flex;
+            position: absolute;
+            top: 10px;
+        }
+    }
+}
+#welcome-page-main{
+    
+    font-size: 2rem;
+    .span{
+        margin: 0;
+    }
+}
+#add-flashcard-main, #flashcard-main{
+    section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #add-form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 1rem;
+            border: 1px solid white;
+            width: fit-content;
+            flex-basis: 50%;
+            padding: 10px;
+            .input-grp{
+                font-size: 0.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+#user-main{
+    section{
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        overflow: scroll;
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        @media screen and (max-width:700px){
+            justify-content: center;            
+        }
+        >span{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}

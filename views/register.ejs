@@ -1,0 +1,18 @@
+<%- include("./partials/head.ejs") %> 
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <main class="login-register-main">
+        <%- include("./partials/flashMessage.ejs") %>
+        <form action="/register" method="post" id="login-register-form">
+            <label for="email">Enter your email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="username">Enter your username</label>
+            <input type="text" name="username" id="username" required>
+            <label for="password">Enter your password</label>
+            <input type="password" name="password" id="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </main>
+</body>
+<%- include("./partials/foot.ejs") %> 
+</html>
